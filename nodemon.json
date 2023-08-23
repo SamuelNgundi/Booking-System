@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "samuelwngundi02",
+        "MONGO_PASSWORD": "Teabag.MongoDB.com",
+        "MONGO_DB": "events-react-dev"
+    }
+}

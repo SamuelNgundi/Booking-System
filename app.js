@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -59,4 +60,10 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }));
 
-app.listen(3000)
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@bookings.5nqqspw.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+).then(() => {
+    app.listen(3000)
+})
+.catch(err => {
+    console.log(err);
+});
