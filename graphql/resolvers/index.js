@@ -8,7 +8,9 @@ const events = eventIds => {
     return Event.find({_id: {$in: eventIds}})
     .then(events => {
         return events.map(event =>{
-            return { ...event._doc, creator: user.bind(this, event.creator) }
+            return { ...event._doc,
+                date: new Date(event._doc.date).toISOString(),
+                creator: user.bind(this, event.creator) }
         })
     }) 
     .catch( err =>{
@@ -31,7 +33,9 @@ module.exports = {
         return Event.find()
         .then(events => {
             return events.map(event => {
-              return { ...event._doc, creator: user.bind(this, event._doc.creator) }; 
+              return { ...event._doc,
+                date: new Date(event._doc.date).toISOString(), 
+                creator: user.bind(this, event._doc.creator) }; 
             });
         })
         .catch(err => {
@@ -58,7 +62,9 @@ module.exports = {
         return event
        .save()
        .then(result => {
-        createdEvent = {...result._doc, creator: user.bind(this, result._doc.creator)};
+        createdEvent = {...result._doc, 
+            date: new Date(event._doc.date).toISOString(), 
+            creator: user.bind(this, result._doc.creator)};
         return User.findById('64ea4a01b4ae24472a4d0c50')
        })
        .then(user => {
