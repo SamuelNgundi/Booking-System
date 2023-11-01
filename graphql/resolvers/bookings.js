@@ -24,7 +24,7 @@ const Event = require('../../models/event');
     }
       const fetchedEvent = await Event.findOne({ _id: args.eventId });
       const booking = new Booking({
-        user: '64ea4a01b4ae24472a4d0c50',
+        user: req.userId,
         event: fetchedEvent
       });
       const result = await booking.save();
