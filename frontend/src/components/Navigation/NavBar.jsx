@@ -10,7 +10,7 @@ function NavBar() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-        <LinkContainer to="/"><Navbar.Brand>EventBooking</Navbar.Brand> </LinkContainer>
+        <Navbar.Brand>EventBooking</Navbar.Brand>
           <Nav className="me-auto">
           <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
             <LinkContainer to="/bookings"><Nav.Link>Bookings</Nav.Link></LinkContainer>
