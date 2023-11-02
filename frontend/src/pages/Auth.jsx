@@ -74,13 +74,13 @@ function Auth() {
           <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
           <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password'/>
 
-          <div className="d-flex justify-content-between mx-4 mb-4">
+          {/* <div className="d-flex justify-content-between mx-4 mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
             <a href="!#">Forgot password?</a>
-          </div>
+          </div> */}
 
           <MDBBtn color='dark' className="mb-4 w-100 ms-1">Sign in</MDBBtn>
-          <p className="text-center">Not a member? <a href="#!">Register</a></p>
+          <p className="text-center">Not a member? <a href="/">Register</a></p>
 
         </MDBTabsPane>
 
@@ -113,9 +113,9 @@ function Auth() {
           <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
           <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
 
-          <div className='d-flex justify-content-center mb-4'>
+          {/* <div className='d-flex justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
-          </div>
+          </div> */}
 
           <MDBBtn color='dark' className="mb-4 w-100 ms-1">Sign up</MDBBtn>
 
