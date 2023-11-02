@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './pages/Auth';
 import Bookings from './pages/Bookings';
 import Events from './pages/Events';
-import './App.css'
 
 const App = () => {
   return (
