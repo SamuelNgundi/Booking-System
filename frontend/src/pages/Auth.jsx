@@ -12,7 +12,8 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
 function Auth() {
 
