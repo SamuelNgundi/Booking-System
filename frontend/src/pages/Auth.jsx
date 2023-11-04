@@ -46,8 +46,16 @@ function Auth() {
   };
 
   const handleSubmit = () => {
-    console.log('Email', email);
-    console.log('Password', password);
+    const trimEmail = email.trim();
+    const trimPassword = password.trim();
+
+    if(!trimEmail || !trimPassword) {
+      alert('Email or Passowrd is needed');
+    }
+    else {
+    console.log('Email', trimEmail);
+    console.log('Password', trimPassword);
+    }
   };
 
   return (
