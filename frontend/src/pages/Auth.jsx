@@ -56,7 +56,7 @@ function Auth() {
     const requestBody ={
       query: `
         mutation {
-          createUser(usetInput:{email: "${trimEmail}", password: "${trimPassword}"}) {
+          createUser(userInput:{email: "${trimEmail}", password: "${trimPassword}"}) {
             _id
             email
           }
@@ -69,6 +69,16 @@ function Auth() {
       headers: {
         'Content-Type':'application/json'
       }
+    }).then( res => {
+      if (res.status !== 200 && res.status !== 201) {
+        throw new Error('Failed')
+      }
+      return res.json();
+    }).then(resData => {
+      console.log(resData);
+    })
+    .catch(err => {
+      console.log(err);
     });
   };
 
