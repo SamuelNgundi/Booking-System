@@ -52,10 +52,24 @@ function Auth() {
     if(!trimEmail || !trimPassword) {
       alert('Email or Passowrd is needed');
     }
-    else {
-    console.log('Email', trimEmail);
-    console.log('Password', trimPassword);
-    }
+
+    const requestBody ={
+      query: `
+        mutation {
+          createUser(usetInput:{email: "${trimEmail}", password: "${trimPassword}"}) {
+            _id
+            email
+          }
+        }
+      `
+    };
+    fetch('http://localhost:3000/graphql', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type':'application/json'
+      }
+    });
   };
 
   return (
