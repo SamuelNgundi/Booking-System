@@ -134,7 +134,7 @@ function Auth() {
             <a href="!#">Forgot password?</a>
           </div> */}
 
-          <MDBBtn color='dark' className="mb-4 w-100 ms-1" onClick={handleSubmit}>Sign in</MDBBtn>
+          <MDBBtn color='dark' className="mb-4 w-100 ms-1" >Log in</MDBBtn>
           <p className="text-center">Not a member? <a href="/">Register</a></p>
 
         </MDBTabsPane>
