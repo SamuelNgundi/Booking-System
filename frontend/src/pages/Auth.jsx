@@ -52,18 +52,39 @@ function Auth() {
 
     if(!trimEmail || !trimPassword) {
       alert('Email or Passowrd is needed');
+      return;
     }
 
-    const requestBody ={
-      query: `
-        mutation {
-          createUser(userInput:{email: "${trimEmail}", password: "${trimPassword}"}) {
-            _id
-            email
+    let requestBody = {};
+
+    if (justifyActive === 'tab1') {
+      //Login
+      requestBody ={
+        query: `
+          query {
+            login(email:{email: "${trimEmail}", password: "${trimPassword}"}) {
+              userId
+              token
+              tokenExpiration
+            }
           }
-        }
-      `
-    };
+        `
+      };
+    }
+    else if (justifyActive === 'tab2') {
+      //Sign Up
+      requestBody ={
+        query: `
+          mutation {
+            createUser(userInput:{email: "${trimEmail}", password: "${trimPassword}"}) {
+              _id
+              email
+            }
+          }
+        `
+      };
+    }
+
     fetch('http://localhost:3000/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
