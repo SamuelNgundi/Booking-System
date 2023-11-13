@@ -38,6 +38,7 @@ function Auth() {
 
     setJustifyActive(value);
   };
+  // Sign Up Credentials
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
